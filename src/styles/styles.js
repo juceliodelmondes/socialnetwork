@@ -191,7 +191,7 @@ export const PostStyle = styled.div`
                 color:#38a3e2;
             }
             .time {
-                font-weight:600;
+                font-weight:600; 
                 color:#8c8c8c;
                 font-size:13px;
                 width:max-content;
