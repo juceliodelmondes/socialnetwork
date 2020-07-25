@@ -195,7 +195,7 @@ export const PostStyle = styled.div`
                 color:#8c8c8c;
                 font-size:13px;
                 width:max-content;
-            }
+            } 
         }
 
         .optionsPostDiv {
@@ -307,54 +307,29 @@ export const ButtonsPostDiv = styled.div`
 //Div for all comments on any post
 export const CommentsDiv = styled.div`
     .commentary{
-        display:flex;
-        flex-direction:row;
+        text-align:left;
         img {
             width:40px;
             height:40px;
-            margin: 10px;
             border-radius:100%;
+            margin:10px;
         }
-        .commentaryDivInternal {
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            .nameAndCommentary{
-                display:flex;
-                flex-direction:row;
-                .nameCommentary{
-                    font-weight:600;
-                    background-color:#efefef;
-                    border-radius:20px;
-                    padding:5px;
-                    color:#38a3e2;
-                    font-size:12px;
-                    text-align:left;
-                    &:hover {
-                        cursor:pointer;
-                    }
-                }
-                .textCommentary {
-                    font-weight:600;
-                    font-size:12px;
-                    text-align:left;
-                }
-            }
-            .optionsCommentary{
-                display:flex;
-                flex-direction:row;
-            }
-        }
-
-        .optionsCommentary {
-            display:flex;
-            flex-direction:row;
-            .dateCommentary {
+        .nameAndText{
+            margin-top:-55px;
+            margin-left:55px;
+            .nameCommentary{
                 font-weight:600;
                 font-size:12px;
+                background-color:#f5f5f5;
+                border-radius:20px;
+                padding:5px;
+                color:#38a3e2;
             }
-            .likeCommentaryDiv {
 
+            .textCommentary {
+                font-weight:600;
+                font-size:12px;
+                margin-left: 7px;
             }
         }
     }

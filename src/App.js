@@ -46,18 +46,10 @@ function App() {
           <CommentsDiv>
             <div className='commentary'>
               <img src="https://pm1.narvii.com/6417/e314d0359bb026aa6a4b4029842eb787a25428af_hq.jpg"/>
-              <div className='commentaryDivInternal'>
-                <div className='nameAndCommentary'>
-                  <span className='nameCommentary'>Jucelio Delmondes</span>
-                  <span className='textCommentary'> - Comentario ldlçkj lkj ljlkjd  dklj dlkj  lkjd lkj lkj d dlkj kl jkld jlkdj jj dj kljd  j jlkjd</span>
-                </div>    
-                <div className='optionsCommentary'>
-                  <div className='dateCommentary'>20/03/1998 - 14:28</div>
-                  <div className='likeCommentaryDiv'>
-
-                  </div>
-                </div>
-              </div>  
+              <div className='nameAndText'>
+                <span className='nameCommentary'>Jucelio Delmondes</span>
+                <span className='textCommentary'>Ak jashdkjhkl ajsdhj hjadsk hjkkdl dhjk hjashkj hkdj jhd dka sdasjkdh jaskjh kajs hd hjkashd h kj hj hjk h</span>
+              </div>
             </div>
           </CommentsDiv>
         </PostStyle>
