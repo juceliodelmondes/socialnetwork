@@ -50,6 +50,10 @@ function App() {
                 <span className='nameCommentary'>Jucelio Delmondes</span>
                 <span className='textCommentary'>Ak jashdkjhkl ajsdhj hjadsk hjkkdl dhjk hjashkj hkdj jhd dka sdasjkdh jaskjh kajs hd hjkashd h kj hj hjk h</span>
               </div>
+              <div className="optionsCommentary">
+                <span className="informationCommentary">20/03/1998 às 14:30 - </span>
+                <span className="likeCommentary">Curtir</span>
+              </div>
             </div>
           </CommentsDiv>
         </PostStyle>

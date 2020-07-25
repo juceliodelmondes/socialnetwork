@@ -12,7 +12,7 @@ export const TopBar = styled.div`
     display:flex;
     background-color:yellow;
     height:65px;
-    background-color:white;
+    background-color:#1a237e;
 `;
 
 //Info profile and status
@@ -20,7 +20,7 @@ export const CardLeft = styled.div`
     display:flex;
     flex-direction:column;
     width:23%;
-    background-color:#f2f2f4;
+    background-color:#283593;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.18);
     z-index:1;
     min-width:230px;
@@ -57,7 +57,7 @@ export const ProfileInfo = styled.div`
         font-weight:600;
         font-size:1rem;
         cursor:pointer;
-        color:#929292;
+        color:white;
         
         &:hover{
             color:black;
@@ -86,19 +86,19 @@ export const LeftOptions = styled.div`
         flex-direction:row;
         justify-content: left;
         margin-left: 50px;
-        margin-bottom:10px;
-        height:50px;
+        margin-bottom:20px;
+        height:fit-content;
         transition: background-color .1s linear;
         border-top-left-radius:70px;
         border-bottom-left-radius:70px;
-        background-color:#f2f2f4;
+        background-color:transparent;
         span {
             font-family:inherit;
             font-weight:600;
             font-size:1rem;
             align-self:center;
             cursor:pointer;
-            color:#929292;
+            color:white;
             margin-left:10px;
         }
         .imageOptions {
@@ -106,17 +106,17 @@ export const LeftOptions = styled.div`
             width:23px;
             height:23px;
             align-self:center;
-            color:#555555;
+            color:white;
             padding:3px;
             border-style:solid;
             border-radius:100%;
             border-width:1px;
-            border-color:#dddddd;
+            border-color:white;
             box-shadow: 3px 0px 15px rgba(0, 0, 0, 0.3);
         }
 
         &:hover{
-            background-color:#f7f8fa;
+            background-color:#3949ab;
             cursor:pointer;
             .imageOptions {
                 transition: all .05s linear;
@@ -270,6 +270,7 @@ export const ButtonsPostDiv = styled.div`
         justify-content:center;
         margin-bottom:10px;
         .likeImage {
+            color:#283593;
             &:hover{
                 cursor:pointer;
             }
@@ -290,6 +291,7 @@ export const ButtonsPostDiv = styled.div`
         justify-content:center;
         margin-bottom:10px;
         .commentaryImage{
+            color:#283593;
             &:hover {
                 cursor:pointer;
             }
@@ -308,6 +310,8 @@ export const ButtonsPostDiv = styled.div`
 export const CommentsDiv = styled.div`
     .commentary{
         text-align:left;
+        margin-right:10px;
+        margin-bottom:10px;
         img {
             width:40px;
             height:40px;
@@ -324,12 +328,33 @@ export const CommentsDiv = styled.div`
                 border-radius:20px;
                 padding:5px;
                 color:#38a3e2;
+                &:hover {
+                    cursor:pointer;
+                }
             }
 
             .textCommentary {
                 font-weight:600;
                 font-size:12px;
                 margin-left: 7px;
+            }
+        }
+
+        .optionsCommentary {
+            .informationCommentary {
+                font-weight:600;
+                font-size:12px;
+                margin-left:55px;
+                color:#8c8c8c;
+            }
+
+            .likeCommentary {
+                font-weight:600;
+                font-size:12px;
+                color:#38a3e2;
+                &:hover {
+                    cursor:pointer;
+                }
             }
         }
     }
