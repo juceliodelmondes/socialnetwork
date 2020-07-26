@@ -13,7 +13,7 @@ function App() {
         <PostStyle>
           <div className='titleDiv'>
             <div className='pictureDiv'>
-              <img src='https://pm1.narvii.com/6417/e314d0359bb026aa6a4b4029842eb787a25428af_hq.jpg'></img>
+              <img src='https://pm1.narvii.com/6417/e314d0359bb026aa6a4b4029842eb787a25428af_hq.jpg' alt=' ' />
             </div>
             <div className='informationPost'>
               <span className='name'>Jucelio Delmondes</span>
@@ -27,7 +27,7 @@ function App() {
             <span>Abc</span>
           </div>
           <div className='imagesPost'>
-            <img src='https://i.pinimg.com/originals/3b/8a/d2/3b8ad2c7b1be2caf24321c852103598a.jpg'></img>
+            <img src='https://i.pinimg.com/originals/3b/8a/d2/3b8ad2c7b1be2caf24321c852103598a.jpg' alt=' '/>
           </div>
           <Divider></Divider>
           <ButtonsPostDiv>
@@ -43,7 +43,7 @@ function App() {
           <FullDivider></FullDivider>
           <CommentsDiv>
             <div className='commentary'>
-              <img src="https://pm1.narvii.com/6417/e314d0359bb026aa6a4b4029842eb787a25428af_hq.jpg"/>
+              <img src="https://pm1.narvii.com/6417/e314d0359bb026aa6a4b4029842eb787a25428af_hq.jpg" alt=' '/>
               <div className='nameAndText'>
                 <span className='nameCommentary'>Jucelio Delmondes</span>
                 <span className='textCommentary'>Ak jashdkjhkl ajsdhj hjadsk hjkkdl dhjk hjashkj hkdj jhd dka sdasjkdh jaskjh kajs hd hjkashd h kj hj hjk h</span>
@@ -65,7 +65,7 @@ function App() {
         <Container>
           <CardLeft>
             <ProfileInfo>
-              <img src='https://pm1.narvii.com/6417/e314d0359bb026aa6a4b4029842eb787a25428af_hq.jpg'></img>
+              <img src='https://pm1.narvii.com/6417/e314d0359bb026aa6a4b4029842eb787a25428af_hq.jpg' alt=' '/>
               <span className="statusProfile">Disponível</span>
               <span className='nameProfile'>Jucelio Delmondes</span>
             </ProfileInfo>
