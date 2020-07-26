@@ -88,6 +88,7 @@ export const LeftOptions = styled.div`
         display:flex;
         flex-direction:row;
         align-items:center;
+        margin-bottom:20px;
         .imageOption {
             color:white;
             border-style:solid;
@@ -95,7 +96,7 @@ export const LeftOptions = styled.div`
             border-width:1px;
             width:30px;
             height:30px;
-            margin-left: 20px;
+            margin-left: 15px;
             padding:2px;
         }
 

@@ -71,27 +71,27 @@ function App() {
             </ProfileInfo>
             <LeftOptions>
               <div className='rowOption'>
-                <IoIosPerson className="imageOptions"></IoIosPerson>
+                <IoIosPerson className="imageOption"></IoIosPerson>
                 <span>Perfil</span>
               </div>
               <div className='rowOption'>
-                <IoIosBook className='imageOptions'></IoIosBook>
+                <IoIosBook className='imageOption'></IoIosBook>
                 <span>Feed</span>
               </div>
               <div className='rowOption'>
-                <IoIosPaper className="imageOptions"></IoIosPaper>
+                <IoIosPaper className="imageOption"></IoIosPaper>
                 <span>Mensagens</span>
               </div>
               <div className='rowOption'>
-                <IoIosPeople className='imageOptions'></IoIosPeople>
+                <IoIosPeople className='imageOption'></IoIosPeople>
                 <span>Seguidores</span>
               </div>
               <div className="rowOption">
-                <IoIosSettings className='imageOptions'></IoIosSettings>
+                <IoIosSettings className='imageOption'></IoIosSettings>
                 <span>Configurações</span>
               </div>
               <div className='rowOption'>
-                <IoIosExit className='imageOptions'></IoIosExit>
+                <IoIosExit className='imageOption'></IoIosExit>
                 <span>Sair</span>
               </div>
             </LeftOptions>
