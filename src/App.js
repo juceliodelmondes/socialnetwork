@@ -1,9 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 import {Container, CardLeft, CenterDiv, CardRight, ProfileInfo,
-TopBar, LeftOptions, PostStyle, Divider, ButtonsPostDiv, FullDivider, CommentsDiv} from './styles/styles'
+LeftOptions, PostStyle, Divider, ButtonsPostDiv, FullDivider, CommentsDiv} from './styles/styles'
 import {IoIosPerson, IoIosBook, IoIosPaper, IoIosPeople, IoIosSettings, IoIosExit,
 IoIosMore, IoIosThumbsUp, IoIosText}  from 'react-icons/io'
 
@@ -64,8 +62,6 @@ function App() {
   return (
     <div className="App">
       <>
-        <TopBar>
-        </TopBar>
         <Container>
           <CardLeft>
             <ProfileInfo>

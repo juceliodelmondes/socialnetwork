@@ -19,11 +19,10 @@ export const TopBar = styled.div`
 export const CardLeft = styled.div`
     display:flex;
     flex-direction:column;
-    width:23%;
-    background-color:#283593;
+    background-color:#0097a7;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.18);
     z-index:1;
-    min-width:230px;
+    min-width:185px;
 `;
 
 //Image, Name
@@ -69,7 +68,7 @@ export const ProfileInfo = styled.div`
         font-weight:600;
         font-size:x-small;
         cursor:pointer;
-        color:green;
+        color:white;
         &:hover{
             color:black;
         }
@@ -79,54 +78,32 @@ export const ProfileInfo = styled.div`
 export const LeftOptions = styled.div`
     display:flex;
     flex-direction:column;
-    height:70%;
+    margin-top:20px;
+    height:100%;
     justify-content:center;
+
     .rowOption {
+        font-weight:600;
+        color:white;
         display:flex;
         flex-direction:row;
-        justify-content: left;
-        margin-left: 50px;
-        margin-bottom:20px;
-        height:fit-content;
-        transition: background-color .1s linear;
-        border-top-left-radius:70px;
-        border-bottom-left-radius:70px;
-        background-color:transparent;
-        span {
-            font-family:inherit;
-            font-weight:600;
-            font-size:1rem;
-            align-self:center;
-            cursor:pointer;
+        align-items:center;
+        .imageOption {
             color:white;
-            margin-left:10px;
-        }
-        .imageOptions {
-            transition: all .5s cubic-bezier(0, 0.8, 0.81, 0.91);
-            width:23px;
-            height:23px;
-            align-self:center;
-            color:white;
-            padding:3px;
             border-style:solid;
             border-radius:100%;
             border-width:1px;
-            border-color:white;
-            box-shadow: 3px 0px 15px rgba(0, 0, 0, 0.3);
+            width:30px;
+            height:30px;
+            margin-left: 20px;
+            padding:2px;
         }
 
-        &:hover{
-            background-color:#3949ab;
-            cursor:pointer;
-            .imageOptions {
-                transition: all .05s linear;
-                width:30px;
-                height:30px;
-                box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.7);
-            }
+        span {
+            margin-left:10px;
         }
-        
     }
+
 `;
 
 //Center div for posts and sidebar
@@ -270,7 +247,7 @@ export const ButtonsPostDiv = styled.div`
         justify-content:center;
         margin-bottom:10px;
         .likeImage {
-            color:#283593;
+            color:#0097a7;
             &:hover{
                 cursor:pointer;
             }
@@ -291,7 +268,7 @@ export const ButtonsPostDiv = styled.div`
         justify-content:center;
         margin-bottom:10px;
         .commentaryImage{
-            color:#283593;
+            color:#0097a7;
             &:hover {
                 cursor:pointer;
             }
