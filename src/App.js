@@ -71,13 +71,13 @@ function App() {
         <Container>
           <CardLeft>
             <DivParticles>
-              <Particles
+              <Particles className='particles'
               params=
               {
                 {
                   "particles": {
                     "number": {
-                      "value": 200,
+                      "value": 300,
                       "density": {
                         "enable": true,
                         "value_area": 800
@@ -102,22 +102,22 @@ function App() {
                       }
                     },
                     "opacity": {
-                      "value": 0.5,
-                      "random": false,
+                      "value": 1,
+                      "random": true,
                       "anim": {
-                        "enable": false,
+                        "enable": true,
                         "speed": 1,
-                        "opacity_min": 0.1,
+                        "opacity_min": 0,
                         "sync": false
                       }
                     },
                     "size": {
-                      "value": 1.5,
+                      "value": 5,
                       "random": true,
                       "anim": {
                         "enable": false,
-                        "speed": 4.872463273808071,
-                        "size_min": 0.1,
+                        "speed": 4,
+                        "size_min": 0.3,
                         "sync": false
                       }
                     },
@@ -130,29 +130,29 @@ function App() {
                     },
                     "move": {
                       "enable": true,
-                      "speed": 0.7,
-                      "direction": "top-left",
-                      "random": false,
+                      "speed": 0.5,
+                      "direction": "none",
+                      "random": true,
                       "straight": false,
                       "out_mode": "out",
                       "bounce": false,
                       "attract": {
                         "enable": false,
                         "rotateX": 600,
-                        "rotateY": 1200
+                        "rotateY": 600
                       }
                     }
                   },
                   "interactivity": {
-                    "detect_on": "canvas",
+                    "detect_on": "window",
                     "events": {
                       "onhover": {
                         "enable": false,
-                        "mode": "repulse"
+                        "mode": "bubble"
                       },
                       "onclick": {
                         "enable": false,
-                        "mode": "push"
+                        "mode": "repulse"
                       },
                       "resize": true
                     },
@@ -164,14 +164,14 @@ function App() {
                         }
                       },
                       "bubble": {
-                        "distance": 400,
-                        "size": 40,
+                        "distance": 250,
+                        "size": 0,
                         "duration": 2,
-                        "opacity": 8,
+                        "opacity": 0,
                         "speed": 3
                       },
                       "repulse": {
-                        "distance": 200,
+                        "distance": 400,
                         "duration": 0.4
                       },
                       "push": {
@@ -182,7 +182,7 @@ function App() {
                       }
                     }
                   },
-                  "retina_detect": false
+                  "retina_detect": true
                 }
               }
               />

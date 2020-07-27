@@ -23,6 +23,11 @@ export const CardLeft = styled.div`
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.18);
     z-index:50;
     min-width:185px;
+    &:hover {
+        .particles {
+            filter:blur(0px);
+        }
+    }
     
 `;
 
@@ -386,4 +391,7 @@ export const DivParticles = styled.div`
     width:100%;
     position:absolute;
     z-index:0;
+    .particles {
+        
+    }
 `;
