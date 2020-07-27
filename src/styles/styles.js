@@ -21,8 +21,9 @@ export const CardLeft = styled.div`
     flex-direction:column;
     background-color:#0097a7;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.18);
-    z-index:1;
+    z-index:50;
     min-width:185px;
+    
 `;
 
 //Image, Name
@@ -125,6 +126,7 @@ export const CenterDiv = styled.div`
     background-color:#f7f8fa;
     min-width:400px;
     align-items:center;
+    z-index:50;
 `;
 
 export const CardRight = styled.div`
@@ -376,4 +378,11 @@ export const CommentDiv = styled.div`
         color:#0097a7;
         cursor:pointer;
     }
+`;
+
+export const DivParticles = styled.div`
+    height:100%;
+    width:100%;
+    position:absolute;
+    z-index:0;
 `;
