@@ -89,11 +89,21 @@ export const LeftOptions = styled.div`
         flex-direction:row;
         align-items:center;
         margin-bottom:20px;
+        &:hover {
+            cursor:pointer;
+            background-color:#00acc1;
+            .imageOption {
+                transition: all .1s linear;
+                width:40px;
+                height:40px;
+            }
+        }
         .imageOption {
             color:white;
             border-style:solid;
             border-radius:100%;
             border-width:1px;
+            transition: all .1s linear;
             width:30px;
             height:30px;
             margin-left: 15px;
@@ -166,7 +176,7 @@ export const PostStyle = styled.div`
                 font-weight:600;
                 cursor:pointer;
                 width:max-content;
-                color:#38a3e2;
+                color:#00acc1;
             }
             .time {
                 font-weight:600; 
@@ -189,7 +199,7 @@ export const PostStyle = styled.div`
     }
     .textPost {
         text-align:left;
-            margin-bottom:20px;
+        margin-bottom:20px;
         span {
             margin-left:25px;
             font-weight:600;
@@ -305,7 +315,7 @@ export const CommentsDiv = styled.div`
                 background-color:#f5f5f5;
                 border-radius:20px;
                 padding:5px;
-                color:#38a3e2;
+                color:#00acc1;
                 &:hover {
                     cursor:pointer;
                 }
@@ -329,7 +339,7 @@ export const CommentsDiv = styled.div`
             .likeCommentary {
                 font-weight:600;
                 font-size:12px;
-                color:#38a3e2;
+                color:#00acc1;
                 &:hover {
                     cursor:pointer;
                 }
