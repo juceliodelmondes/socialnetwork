@@ -32,6 +32,7 @@ export const ProfileInfo = styled.div`
     flex-direction:column;
     align-items:center;
     width:100%;
+    z-index:50;
     img{
         transition: all .5s cubic-bezier(0, 0.8, 0.81, 0.91);
         margin-top:20px;
@@ -82,7 +83,7 @@ export const LeftOptions = styled.div`
     margin-top:20px;
     height:100%;
     justify-content:center;
-
+    z-index:50;
     .rowOption {
         font-weight:600;
         color:white;
@@ -92,7 +93,7 @@ export const LeftOptions = styled.div`
         margin-bottom:20px;
         &:hover {
             cursor:pointer;
-            background-color:#00acc1;
+            background-color:#00acc155;
             .imageOption {
                 transition: all .1s linear;
                 width:40px;
