@@ -295,7 +295,7 @@ export const ButtonsPostDiv = styled.div`
 `;
 
 //Div for all comments on any post
-export const CommentsDiv = styled.div`
+export const CommentaryDiv = styled.div`
     .commentary{
         text-align:left;
         margin-right:10px;
@@ -345,5 +345,35 @@ export const CommentsDiv = styled.div`
                 }
             }
         }
+    }
+`;
+
+export const CommentDiv = styled.div`
+    display:flex;
+    flex-direction:row;
+    margin-bottom:10px;
+    img {
+        width: 30px;
+        height:30px;
+        border-radius:100%;
+        margin:5px;
+    }
+    input {
+        width:100%;
+        outline:0;
+        border-color:#eeeeee;
+        border-style:solid;
+        border-width:1px;
+        font-weight:600;
+        font-size:12px;
+        border-radius:20px;
+        padding-left:10px;
+    }
+    .buttonSendCommentary{
+        width:30px;
+        height:30px;
+        margin:5px;
+        color:#0097a7;
+        cursor:pointer;
     }
 `;

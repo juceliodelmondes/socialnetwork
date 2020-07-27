@@ -1,9 +1,9 @@
 import React from 'react';
 
 import {Container, CardLeft, CenterDiv, CardRight, ProfileInfo,
-LeftOptions, PostStyle, Divider, ButtonsPostDiv, FullDivider, CommentsDiv} from './styles/styles'
+LeftOptions, PostStyle, Divider, ButtonsPostDiv, FullDivider, CommentaryDiv, CommentDiv} from './styles/styles'
 import {IoIosPerson, IoIosBook, IoIosPaper, IoIosPeople, IoIosSettings, IoIosExit,
-IoIosMore, IoIosThumbsUp, IoIosText}  from 'react-icons/io'
+IoIosMore, IoIosThumbsUp, IoIosText,IoMdSend}  from 'react-icons/io'
 
 function App() {
 
@@ -41,7 +41,7 @@ function App() {
             </div>
           </ButtonsPostDiv>
           <FullDivider></FullDivider>
-          <CommentsDiv>
+          <CommentaryDiv>
             <div className='commentary'>
               <img src="https://pm1.narvii.com/6417/e314d0359bb026aa6a4b4029842eb787a25428af_hq.jpg" alt=' '/>
               <div className='nameAndText'>
@@ -53,7 +53,12 @@ function App() {
                 <span className="likeCommentary">Curtir</span>
               </div>
             </div>
-          </CommentsDiv>
+          </CommentaryDiv>
+          <CommentDiv>
+            <img src="https://pm1.narvii.com/6417/e314d0359bb026aa6a4b4029842eb787a25428af_hq.jpg" alt=' '/>
+            <input type="text" placeholder="Escreva um comentário:"></input>
+            <IoMdSend class="buttonSendCommentary"></IoMdSend>
+          </CommentDiv>
         </PostStyle>
       </>
     )
