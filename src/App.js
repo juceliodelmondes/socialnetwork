@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import {Container, CardLeft, CenterDiv, CardRight, ProfileInfo,
 LeftOptions, PostStyle, Divider, ButtonsPostDiv, FullDivider, CommentaryDiv, CommentDiv,
 DivParticles,
-ContainerLogin} from './styles/styles'
+ContainerLogin, CardCentral} from './styles/styles'
 import {IoIosPerson, IoIosBook, IoIosPaper, IoIosPeople, IoIosSettings, IoIosExit,
 IoIosMore, IoIosThumbsUp, IoIosText,IoMdSend}  from 'react-icons/io'
 import Particles from 'react-particles-js';
@@ -12,6 +12,11 @@ function App() {
   useEffect(() => {
     console.log("Use effect")
   })
+  
+  const login = () => {
+    setLogado(true);
+  }
+
   if(logado) {
     const Posts = () => {
       return (
@@ -280,7 +285,7 @@ function App() {
                     }
                   },
                   "size": {
-                    "value": 5,
+                    "value": 3,
                     "random": true,
                     "anim": {
                       "enable": false,
@@ -355,6 +360,15 @@ function App() {
             }
           />
         </DivParticles>
+        <CardCentral>
+          <h1 className="tituloInicio">Inicio de sessão</h1>
+          <input className="input1" type="text" placeholder="Usuário:"/>
+          <input className="input2" type="password" placeholder="Senha:"/>
+          <button className="botaoLoginCadastrar" onClick={() => {
+            login();
+          }}>Login</button>
+          <p>Cadastre-se</p>
+        </CardCentral>
       </ContainerLogin>
     </>
   )

@@ -401,4 +401,58 @@ export const ContainerLogin = styled.div`
     background-color:#00acc1;
     display:flex;
     height:100vh;
+    align-items:center;
+    justify-content:center;
+    
+`;
+
+export const CardCentral = styled.div`
+    background-color:white;
+    width:400px;
+    height:400px;
+    display:flex;
+    flex-direction:column;
+    border-radius:10px;
+    z-index:1;
+    h1 {
+        text-align:center;
+    }
+
+    input {
+        align-self:center;
+        outline: 0;
+        border-style:none;
+        border-bottom-style:solid;
+        margin-top:70px;
+        width:80%;
+        font-size:large;
+        transition: border-bottom-color .5s linear;
+        border-bottom-color:gray;
+        &:focus {
+            transition: border-bottom-color .5s linear;
+            border-bottom-color:#00acc1;
+        }
+    }
+
+    button {
+        align-self:center;
+        width:50%;
+        margin-top:40px;
+        background-color:#00acc1;
+        border-style:none;
+        border-radius:3px;
+        color:white;
+        height:35px;
+        outline:0;
+        cursor:pointer;
+        font-size:medium;
+        font-weight:600;
+    }
+
+    p {
+        font-size:small;
+        text-align:center;
+        font-weight:600;
+        cursor:pointer;
+    }
 `;
