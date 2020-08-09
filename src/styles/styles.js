@@ -395,3 +395,10 @@ export const DivParticles = styled.div`
         
     }
 `;
+
+//Estilo para login =========================================================================
+export const ContainerLogin = styled.div`
+    background-color:#00acc1;
+    display:flex;
+    height:100vh;
+`;
