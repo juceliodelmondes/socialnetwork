@@ -3,18 +3,58 @@ import React, {useState, useEffect} from 'react';
 import {Container, CardLeft, CenterDiv, CardRight, ProfileInfo,
 LeftOptions, PostStyle, Divider, ButtonsPostDiv, FullDivider, CommentaryDiv, CommentDiv,
 DivParticles,
-ContainerLogin, CardCentral} from './styles/styles'
+ContainerLogin, CardCentral, CardCadastrar} from './styles/styles'
 import {IoIosPerson, IoIosBook, IoIosPaper, IoIosPeople, IoIosSettings, IoIosExit,
 IoIosMore, IoIosThumbsUp, IoIosText,IoMdSend}  from 'react-icons/io'
 import Particles from 'react-particles-js';
 function App() {
   const [logado, setLogado] = useState(false);
+  const [cardInicio, setCardInicio] = useState("login");
+
   useEffect(() => {
     console.log("Use effect")
   })
   
   const login = () => {
     setLogado(true);
+  }
+
+  const alterarDivCentral = () => {
+    if(cardInicio == "login") setCardInicio("cadastrar");
+    if(cardInicio == "cadastrar") setCardInicio("login");
+  }
+
+  const cadastrar = () => {
+    //trocar informacoes
+  }
+
+  const DivCardInicio = () => {
+    if(cardInicio == "login") {
+      return (
+        <CardCentral>
+          <h1 className="tituloInicio">Inicio de sessão</h1>
+          <input className="usuario" type="text" placeholder="Usuário:"/>
+          <input className="senha" type="password" placeholder="Senha:"/>
+          <button className="botaoLoginCadastrar" onClick={() => {
+            login();
+          }}>Login</button>
+          <p onClick={() => alterarDivCentral()}>Cadastre-se</p>
+        </CardCentral>
+      )
+    } else if(cardInicio == "cadastrar") {
+      return (
+        <CardCadastrar>
+          <h1 className="tituloInicio">Cadastre-se</h1>
+          <input className="usuario" type="text" placeholder="Usuário de registro:"/>
+          <input className="senha1" type="password" placeholder="Senha:"/>
+          <input className="senha2" type="password" placeholder="Repita a senha:"/>
+          <button className="botaoLoginCadastrar" onClick={() => {
+            login();
+          }}>Cadastrar</button>
+          <p onClick={() => alterarDivCentral()}>Já tenho uma conta</p>
+        </CardCadastrar>
+      )
+    }
   }
 
   if(logado) {
@@ -360,15 +400,9 @@ function App() {
             }
           />
         </DivParticles>
-        <CardCentral>
-          <h1 className="tituloInicio">Inicio de sessão</h1>
-          <input className="input1" type="text" placeholder="Usuário:"/>
-          <input className="input2" type="password" placeholder="Senha:"/>
-          <button className="botaoLoginCadastrar" onClick={() => {
-            login();
-          }}>Login</button>
-          <p>Cadastre-se</p>
-        </CardCentral>
+        <DivCardInicio>
+
+        </DivCardInicio>
       </ContainerLogin>
     </>
   )

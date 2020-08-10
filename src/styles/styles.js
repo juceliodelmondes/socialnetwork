@@ -408,7 +408,7 @@ export const ContainerLogin = styled.div`
 
 export const CardCentral = styled.div`
     background-color:white;
-    width:400px;
+    width:360px;
     height:400px;
     display:flex;
     flex-direction:column;
@@ -418,16 +418,109 @@ export const CardCentral = styled.div`
         text-align:center;
     }
 
-    input {
+    .usuario, .senha {
         align-self:center;
         outline: 0;
         border-style:none;
         border-bottom-style:solid;
-        margin-top:70px;
+        margin-top:30px;
+        margin-bottom:30px;
         width:80%;
         font-size:large;
         transition: border-bottom-color .5s linear;
         border-bottom-color:gray;
+        color:gray;
+        &:focus {
+            transition: border-bottom-color .5s linear;
+            border-bottom-color:#00acc1;
+        }
+    }
+
+    button {
+        align-self:center;
+        width:50%;
+        margin-top:40px;
+        background-color:#00acc1;
+        border-style:none;
+        border-radius:3px;
+        color:white;
+        height:35px;
+        outline:0;
+        cursor:pointer;
+        font-size:medium;
+        font-weight:600;
+    }
+
+    p {
+        font-size:small;
+        text-align:center;
+        font-weight:600;
+        cursor:pointer;
+    }
+`;
+
+export const CardCadastrar = styled.div`
+    background-color:white;
+    width:360px;
+    height:400px;
+    display:flex;
+    flex-direction:column;
+    border-radius:10px;
+    z-index:1;
+    h1 {
+        text-align:center;
+    }
+
+    .usuario {
+        align-self:center;
+        outline: 0;
+        border-style:none;
+        border-bottom-style:solid;
+        margin-top:20px;
+        margin-bottom:20px;
+        width:80%;
+        font-size:large;
+        transition: border-bottom-color .5s linear;
+        border-bottom-color:gray;
+        color:gray;
+        &:focus {
+            transition: border-bottom-color .5s linear;
+            border-bottom-color:#00acc1;
+        }
+    }
+
+    .senha1 {
+        
+        align-self:center;
+        outline: 0;
+        border-style:none;
+        border-bottom-style:solid;
+        margin-top:20px;
+        margin-bottom:20px;
+        width:80%;
+        font-size:large;
+        transition: border-bottom-color .5s linear;
+        border-bottom-color:gray;
+        color:gray;
+        &:focus {
+            transition: border-bottom-color .5s linear;
+            border-bottom-color:#00acc1;
+        }
+    }
+
+    .senha2 {
+        
+        align-self:center;
+        outline: 0;
+        border-style:none;
+        border-bottom-style:solid;
+        margin-top:20px;
+        margin-bottom:20px;
+        width:80%;
+        font-size:large;
+        transition: border-bottom-color .5s linear;
+        border-bottom-color:gray;
+        color:gray;
         &:focus {
             transition: border-bottom-color .5s linear;
             border-bottom-color:#00acc1;
