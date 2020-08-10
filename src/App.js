@@ -20,16 +20,13 @@ function App() {
   }
 
   const alterarDivCentral = () => {
-    if(cardInicio == "login") setCardInicio("cadastrar");
-    if(cardInicio == "cadastrar") setCardInicio("login");
+    if(cardInicio === "login") setCardInicio("cadastrar");
+    if(cardInicio === "cadastrar") setCardInicio("login");
   }
 
-  const cadastrar = () => {
-    //trocar informacoes
-  }
 
   const DivCardInicio = () => {
-    if(cardInicio == "login") {
+    if(cardInicio === "login") {
       return (
         <CardCentral>
           <h1 className="tituloInicio">Inicio de sessão</h1>
@@ -41,7 +38,7 @@ function App() {
           <p onClick={() => alterarDivCentral()}>Cadastre-se</p>
         </CardCentral>
       )
-    } else if(cardInicio == "cadastrar") {
+    } else if(cardInicio === "cadastrar") {
       return (
         <CardCadastrar>
           <h1 className="tituloInicio">Cadastre-se</h1>
