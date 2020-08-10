@@ -3,10 +3,11 @@ import React, {useState, useEffect} from 'react';
 import {Container, CardLeft, CenterDiv, CardRight, ProfileInfo,
 LeftOptions, PostStyle, Divider, ButtonsPostDiv, FullDivider, CommentaryDiv, CommentDiv,
 DivParticles,
-ContainerLogin, CardCentral, CardCadastrar} from './styles/styles'
+ContainerLogin, CardCentral, CardCadastrar, CardDicas, ContainerCadastrar} from './styles/styles'
 import {IoIosPerson, IoIosBook, IoIosPaper, IoIosPeople, IoIosSettings, IoIosExit,
 IoIosMore, IoIosThumbsUp, IoIosText,IoMdSend}  from 'react-icons/io'
 import Particles from 'react-particles-js';
+import Axios from 'axios';
 function App() {
   const [logado, setLogado] = useState(false);
   const [cardInicio, setCardInicio] = useState("login");
@@ -40,16 +41,23 @@ function App() {
       )
     } else if(cardInicio === "cadastrar") {
       return (
-        <CardCadastrar>
-          <h1 className="tituloInicio">Cadastre-se</h1>
-          <input className="usuario" type="text" placeholder="Usuário de registro:"/>
-          <input className="senha1" type="password" placeholder="Senha:"/>
-          <input className="senha2" type="password" placeholder="Repita a senha:"/>
-          <button className="botaoLoginCadastrar" onClick={() => {
-            login();
-          }}>Cadastrar</button>
-          <p onClick={() => alterarDivCentral()}>Já tenho uma conta</p>
-        </CardCadastrar>
+        <ContainerCadastrar>
+          <CardCadastrar>
+            <h1 className="tituloInicio">Cadastre-se</h1>
+            <input className="usuario" type="text" placeholder="Usuário de registro:"/>
+            <input className="senha1" type="password" placeholder="Senha:"/>
+            <input className="senha2" type="password" placeholder="Repita a senha:"/>
+            <button className="botaoLoginCadastrar" onClick={() => {
+              login();
+            }}>Cadastrar</button>
+            <p onClick={() => alterarDivCentral()}>Já tenho uma conta</p>
+          </CardCadastrar>
+          <CardDicas>
+            <h3>Dicas:</h3>
+            <p> - Não utilize espaço no usuário de registro</p>
+            <p> - Evite utilizar uma senha pessoal</p>
+          </CardDicas>
+        </ContainerCadastrar>
       )
     }
   }

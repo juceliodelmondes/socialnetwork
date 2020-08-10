@@ -549,3 +549,24 @@ export const CardCadastrar = styled.div`
         cursor:pointer;
     }
 `;
+
+export const ContainerCadastrar = styled.div`
+    display:flex;
+    flex-direction:column;
+    z-index:1;
+`;
+
+export const CardDicas = styled.div`
+    background-color:white;
+    border-radius:10px;
+    margin-top:10px;
+    h3 {
+        text-align:center;
+    }
+
+    p {
+        color:gray;
+        text-align:center;
+        font-weight:600;
+    }
+`;
