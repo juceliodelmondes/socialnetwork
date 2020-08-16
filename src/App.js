@@ -17,7 +17,34 @@ function App() {
   })
   
   const login = () => {
-    setLogado(true);
+    let user = document.getElementById("usuarioLogin").value;
+    let password = document.getElementById("senhaLogin").value;
+    const obj = {
+      "user" : user,
+      "password" : password
+    }
+    if(user !== "" && password !== "") {
+      Axios.post('http://localhost:8080/login', obj).then(objResult => {
+        console.log(objResult.data);
+        if(objResult.data.success) setLogado(true);
+      })
+    }
+  }
+
+  const cadastrar = () => {
+    let user = document.getElementById("usuarioRegistro").value;
+    let pass1 = document.getElementById("senha1Registro").value;
+    let pass2 = document.getElementById("senha2Registro").value;
+    if(pass1 === pass2) {
+      const obj = {
+        "user" : user,
+        "password" : pass1
+      }
+      console.log(obj);
+      Axios.post(`http://localhost:8080/register`,  obj ).then(res => {
+        console.log(res.data);
+      })
+    }
   }
 
   const alterarDivCentral = () => {
@@ -31,9 +58,9 @@ function App() {
       return (
         <CardCentral>
           <h1 className="tituloInicio">Inicio de sessão</h1>
-          <input className="usuario" type="text" placeholder="Usuário:"/>
-          <input className="senha" type="password" placeholder="Senha:"/>
-          <button className="botaoLoginCadastrar" onClick={() => {
+          <input className="usuario" id="usuarioLogin" type="text" placeholder="Usuário:"/>
+          <input className="senha" id="senhaLogin" type="password" placeholder="Senha:"/>
+          <button className="botaoLogin" onClick={() => {
             login();
           }}>Login</button>
           <p onClick={() => alterarDivCentral()}>Cadastre-se</p>
@@ -44,11 +71,11 @@ function App() {
         <ContainerCadastrar>
           <CardCadastrar>
             <h1 className="tituloInicio">Cadastre-se</h1>
-            <input className="usuario" type="text" placeholder="Usuário de registro:"/>
-            <input className="senha1" type="password" placeholder="Senha:"/>
-            <input className="senha2" type="password" placeholder="Repita a senha:"/>
+            <input className="usuarioRegistro" id='usuarioRegistro' type="text" placeholder="Usuário de registro:"/>
+            <input className="senha1Registro" id="senha1Registro" type="password" placeholder="Senha:"/>
+            <input className="senha2Registro" id="senha2Registro" type="password" placeholder="Repita a senha:"/>
             <button className="botaoLoginCadastrar" onClick={() => {
-              login();
+              cadastrar();
             }}>Cadastrar</button>
             <p onClick={() => alterarDivCentral()}>Já tenho uma conta</p>
           </CardCadastrar>
@@ -113,7 +140,7 @@ function App() {
             <CommentDiv>
               <img src="https://pm1.narvii.com/6417/e314d0359bb026aa6a4b4029842eb787a25428af_hq.jpg" alt=' '/>
               <input type="text" placeholder="Escreva um comentário:"></input>
-              <IoMdSend class="buttonSendCommentary"></IoMdSend>
+              <IoMdSend className="buttonSendCommentary"></IoMdSend>
             </CommentDiv>
           </PostStyle>
         </>

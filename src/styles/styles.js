@@ -471,7 +471,7 @@ export const CardCadastrar = styled.div`
         text-align:center;
     }
 
-    .usuario {
+    .usuarioRegistro {
         align-self:center;
         outline: 0;
         border-style:none;
@@ -489,7 +489,7 @@ export const CardCadastrar = styled.div`
         }
     }
 
-    .senha1 {
+    .senha1Registro {
         
         align-self:center;
         outline: 0;
@@ -508,7 +508,7 @@ export const CardCadastrar = styled.div`
         }
     }
 
-    .senha2 {
+    .senha2Registro {
         
         align-self:center;
         outline: 0;
