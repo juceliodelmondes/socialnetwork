@@ -10,10 +10,26 @@ import Particles from 'react-particles-js';
 import Axios from 'axios';
 function App() {
   const [logado, setLogado] = useState(false);
-  const [cardInicio, setCardInicio] = useState("login");
+  const [cardInicio, setCardInicio] = useState("validacao");
 
   useEffect(() => {
-    console.log("Use effect")
+    if(cardInicio === "validacao") {
+      let token = localStorage.getItem('@social-network/session/token');
+      let user = localStorage.getItem("@social-network/session/user");
+      const obj = {
+        "tokenSession" : token,
+        "user" : user
+      }
+      Axios.post("http://localhost:8080/session/validate", obj).then(objResult => {
+        console.log(objResult);
+        setCardInicio("login");
+        if(objResult.data) {
+          setLogado(true);
+        } else {
+          logoff();
+        }
+      });
+    }
   })
   
   const login = () => {
@@ -26,7 +42,13 @@ function App() {
     if(user !== "" && password !== "") {
       Axios.post('http://localhost:8080/login', obj).then(objResult => {
         console.log(objResult.data);
-        if(objResult.data.success) setLogado(true);
+        if(objResult.data.success) {
+          localStorage.setItem('@social-network/session/token', objResult.data.token);
+          localStorage.setItem('@social-network/session/user', objResult.data.user);
+          console.log(localStorage.getItem('@social-network/session/token'));
+          console.log(localStorage.getItem('@social-network/session/user'));
+          setLogado(true);
+        }
       })
     }
   }
@@ -43,8 +65,23 @@ function App() {
       console.log(obj);
       Axios.post(`http://localhost:8080/register`,  obj ).then(res => {
         console.log(res.data);
+        if(res.data.success) {
+          setCardInicio("login");
+        }
       })
     }
+  }
+
+  const logoff = () => {
+    const obj = {
+      "tokenSession" : localStorage.getItem("@social-network/session/token"),
+      "user" : localStorage.getItem("@social-network/session/user")
+    }
+    Axios.post("http://localhost:8080/session/invalidate", obj);
+    
+    localStorage.removeItem("@social-network/session/token");
+    localStorage.removeItem("@social-network/session/user");
+    setLogado(false);
   }
 
   const alterarDivCentral = () => {
@@ -85,6 +122,12 @@ function App() {
             <p> - Evite utilizar uma senha pessoal</p>
           </CardDicas>
         </ContainerCadastrar>
+      )
+    } else if(cardInicio === "validacao") {
+      return(
+        <>
+
+        </>
       )
     }
   }
@@ -295,7 +338,7 @@ function App() {
                   <IoIosSettings className='imageOption'></IoIosSettings>
                   <span>Configurações</span>
                 </div>
-                <div className='rowOption'>
+                <div className='rowOption'onClick={() => logoff()}>
                   <IoIosExit className='imageOption'></IoIosExit>
                   <span>Sair</span>
                 </div>
