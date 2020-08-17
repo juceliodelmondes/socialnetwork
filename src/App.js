@@ -35,7 +35,7 @@ function App() {
         setLogado(true);
       }
     }
-  })
+  }, [cardInicio])
   
   const login = () => {
     let user = document.getElementById("usuarioLogin").value;
