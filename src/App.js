@@ -16,19 +16,24 @@ function App() {
     if(cardInicio === "validacao") {
       let token = localStorage.getItem('@social-network/session/token');
       let user = localStorage.getItem("@social-network/session/user");
-      const obj = {
-        "tokenSession" : token,
-        "user" : user
-      }
-      Axios.post("http://localhost:8080/session/validate", obj).then(objResult => {
-        console.log(objResult);
-        setCardInicio("login");
-        if(objResult.data) {
-          setLogado(true);
-        } else {
-          logoff();
+      if(token !== "" && user !== "") {
+        const obj = {
+          "tokenSession" : token,
+          "user" : user
         }
-      });
+        Axios.post("http://localhost:8080/session/validate", obj).then(objResult => {
+          console.log(objResult);
+          setCardInicio("login");
+          if(objResult.data) {
+            setLogado(true);
+          } else {
+            logoff();
+          }
+        });
+      } else {
+        setCardInicio('login');
+        setLogado(true);
+      }
     }
   })
   
@@ -365,20 +370,20 @@ function App() {
               {
                 "particles": {
                   "number": {
-                    "value": 300,
+                    "value": 80,
                     "density": {
                       "enable": true,
                       "value_area": 800
                     }
                   },
                   "color": {
-                    "value": "#ffffff"
+                    "value": "#cabe98"
                   },
                   "shape": {
                     "type": "circle",
                     "stroke": {
-                      "width": 0,
-                      "color": "#000000"
+                      "width": 0.5,
+                      "color": "#d2c498"
                     },
                     "polygon": {
                       "nb_sides": 5
@@ -390,22 +395,22 @@ function App() {
                     }
                   },
                   "opacity": {
-                    "value": 1,
+                    "value": 0.3,
                     "random": true,
                     "anim": {
-                      "enable": true,
+                      "enable": false,
                       "speed": 1,
-                      "opacity_min": 0,
+                      "opacity_min": 0.1,
                       "sync": false
                     }
                   },
                   "size": {
-                    "value": 3,
+                    "value": 4,
                     "random": true,
                     "anim": {
                       "enable": false,
-                      "speed": 4,
-                      "size_min": 0.3,
+                      "speed": 40,
+                      "size_min": 0.1,
                       "sync": false
                     }
                   },
@@ -418,29 +423,29 @@ function App() {
                   },
                   "move": {
                     "enable": true,
-                    "speed": 0.5,
-                    "direction": "none",
+                    "speed": 1,
+                    "direction": "top-right",
                     "random": true,
                     "straight": false,
                     "out_mode": "out",
                     "bounce": false,
                     "attract": {
-                      "enable": false,
-                      "rotateX": 600,
-                      "rotateY": 600
+                      "enable": true,
+                      "rotateX": 10000,
+                      "rotateY": 3447.335930860874
                     }
                   }
                 },
                 "interactivity": {
-                  "detect_on": "window",
+                  "detect_on": "canvas",
                   "events": {
                     "onhover": {
                       "enable": false,
-                      "mode": "bubble"
+                      "mode": "repulse"
                     },
                     "onclick": {
                       "enable": false,
-                      "mode": "repulse"
+                      "mode": "push"
                     },
                     "resize": true
                   },
@@ -452,14 +457,14 @@ function App() {
                       }
                     },
                     "bubble": {
-                      "distance": 250,
-                      "size": 0,
+                      "distance": 400,
+                      "size": 40,
                       "duration": 2,
-                      "opacity": 0,
+                      "opacity": 8,
                       "speed": 3
                     },
                     "repulse": {
-                      "distance": 400,
+                      "distance": 200,
                       "duration": 0.4
                     },
                     "push": {

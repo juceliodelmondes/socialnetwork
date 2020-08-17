@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import background from './background.jpg';
 
 export const Container = styled.div`
     display:flex;
@@ -391,6 +392,7 @@ export const DivParticles = styled.div`
     width:100%;
     position:absolute;
     z-index:0;
+    filter:blur(5px);
     .particles {
         
     }
@@ -398,12 +400,15 @@ export const DivParticles = styled.div`
 
 //Estilo para login =========================================================================
 export const ContainerLogin = styled.div`
-    background-color:#00acc1;
+    background-color:#1f1f1f;
     display:flex;
     height:100vh;
     align-items:center;
     justify-content:center;
-    
+    background-image: url(${background});
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
 `;
 
 export const CardCentral = styled.div`
