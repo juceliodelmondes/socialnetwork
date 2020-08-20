@@ -8,9 +8,25 @@ import {IoIosPerson, IoIosBook, IoIosPaper, IoIosPeople, IoIosSettings, IoIosExi
 IoIosMore, IoIosThumbsUp, IoIosText,IoMdSend}  from 'react-icons/io'
 import Particles from 'react-particles-js';
 import Axios from 'axios';
+import Snackbar from '@material-ui/core/Snackbar';
+import Alert from '@material-ui/lab/Alert';
+
 function App() {
   const [logado, setLogado] = useState(false);
   const [cardInicio, setCardInicio] = useState("validacao");
+  const [snackBarState, setSnack] = useState(false);
+  const [snackBarMessage, setSnackBarMessage] = useState();
+  const [severityMessage, setSeverityMessage] = useState();
+
+  const openSnack = (message, severity) => {
+    setSeverityMessage(severity);
+    setSnackBarMessage(message);
+    setSnack(true);
+  }
+
+  const closeSnack = () => {
+    setSnack(false);
+  }
 
   if(cardInicio === "validacao") {
     let token = localStorage.getItem('@social-network/session/token');
@@ -51,6 +67,8 @@ function App() {
           console.log(localStorage.getItem('@social-network/session/token'));
           console.log(localStorage.getItem('@social-network/session/user'));
           setLogado(true);
+        } else {
+          openSnack(objResult.data.message, "error");
         }
       })
     }
@@ -70,6 +88,9 @@ function App() {
         console.log(res.data);
         if(res.data.success) {
           setCardInicio("login");
+          openSnack(res.data.message, "success");
+        } else {
+          openSnack(res.data.message, "error");
         }
       })
     }
@@ -104,6 +125,7 @@ function App() {
             login();
           }}>Login</button>
           <p onClick={() => alterarDivCentral()}>Cadastre-se</p>
+          
         </CardCentral>
       )
     } else if(cardInicio === "cadastrar") {
@@ -139,6 +161,7 @@ function App() {
     const Posts = () => {
       return (
         <>
+          
           <PostStyle>
             <div className='titleDiv'>
               <div className='pictureDiv'>
@@ -360,6 +383,7 @@ function App() {
     );
   } else return (
     <>
+      
       <ContainerLogin>
         <DivParticles>
           <Particles className='particles'
@@ -482,6 +506,12 @@ function App() {
 
         </DivCardInicio>
       </ContainerLogin>
+      
+      <Snackbar open={snackBarState} onClose={closeSnack} autoHideDuration={6000}> 
+        <Alert onClose={closeSnack} severity={severityMessage}>
+          {snackBarMessage}
+        </Alert>
+      </Snackbar>
     </>
   )
 }
