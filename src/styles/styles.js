@@ -411,14 +411,15 @@ export const ContainerLogin = styled.div`
     background-size: cover; /* Resize the background image to cover the entire container */
 `;
 
+//card login
 export const CardCentral = styled.div`
     background-color:white;
     box-shadow:#0000007a 3px 3px 10px;
     width:300px;
-    height:300px;
+    height:auto;
     display:flex;
     flex-direction:column;
-    border-radius:5px;
+    border-radius:3px;
     z-index:1;
     .tituloInicio {
         text-align:center;
@@ -467,84 +468,46 @@ export const CardCentral = styled.div`
 
 export const CardCadastrar = styled.div`
     background-color:white;
-    width:360px;
-    height:400px;
+    box-shadow:#0000007a 3px 3px 10px;
+    width:300px;
+    height:auto;
     display:flex;
     flex-direction:column;
-    border-radius:10px;
+    border-radius:3px;
     z-index:1;
-    h1 {
+    .tituloInicio {
         text-align:center;
     }
 
-    .usuarioRegistro {
+    .usuarioRegistro, .senha1Registro, .senha2Registro {
         align-self:center;
         outline: 0;
         border-style:none;
         border-bottom-style:solid;
         margin-top:20px;
-        margin-bottom:20px;
-        width:80%;
-        font-size:large;
+        width:70%;
+        font-size:medium;
         transition: border-bottom-color .5s linear;
         border-bottom-color:gray;
         color:gray;
         &:focus {
             transition: border-bottom-color .5s linear;
-            border-bottom-color:#00acc1;
+            border-bottom-color:#012935;
         }
     }
 
-    .senha1Registro {
-        
+    .botaoCadastrar {
         align-self:center;
-        outline: 0;
-        border-style:none;
-        border-bottom-style:solid;
-        margin-top:20px;
-        margin-bottom:20px;
-        width:80%;
-        font-size:large;
-        transition: border-bottom-color .5s linear;
-        border-bottom-color:gray;
-        color:gray;
-        &:focus {
-            transition: border-bottom-color .5s linear;
-            border-bottom-color:#00acc1;
-        }
-    }
-
-    .senha2Registro {
-        
-        align-self:center;
-        outline: 0;
-        border-style:none;
-        border-bottom-style:solid;
-        margin-top:20px;
-        margin-bottom:20px;
-        width:80%;
-        font-size:large;
-        transition: border-bottom-color .5s linear;
-        border-bottom-color:gray;
-        color:gray;
-        &:focus {
-            transition: border-bottom-color .5s linear;
-            border-bottom-color:#00acc1;
-        }
-    }
-
-    button {
-        align-self:center;
-        width:50%;
+        width:45%;
         margin-top:40px;
-        background-color:#00acc1;
+        background-color:#012935;
         border-style:none;
         border-radius:3px;
         color:white;
-        height:35px;
+        height:30px;
         outline:0;
         cursor:pointer;
-        font-size:medium;
+        font-size:small;
         font-weight:600;
     }
 
@@ -564,15 +527,19 @@ export const ContainerCadastrar = styled.div`
 
 export const CardDicas = styled.div`
     background-color:white;
-    border-radius:10px;
+    box-shadow:#0000007a 3px 3px 10px;
+    border-radius:3px;
     margin-top:10px;
+    width:300px;
+    height:auto;
     h3 {
         text-align:center;
     }
 
     p {
-        color:gray;
+        color:#ff5000;
         text-align:center;
         font-weight:600;
+        font-size:small;
     }
 `;

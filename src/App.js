@@ -110,19 +110,19 @@ function App() {
       return (
         <ContainerCadastrar>
           <CardCadastrar>
-            <h1 className="tituloInicio">Cadastre-se</h1>
+            <h2 className="tituloInicio">Cadastre-se</h2>
             <input className="usuarioRegistro" id='usuarioRegistro' type="text" placeholder="Usuário de registro:"/>
             <input className="senha1Registro" id="senha1Registro" type="password" placeholder="Senha:"/>
             <input className="senha2Registro" id="senha2Registro" type="password" placeholder="Repita a senha:"/>
-            <button className="botaoLoginCadastrar" onClick={() => {
+            <button className="botaoCadastrar" onClick={() => {
               cadastrar();
             }}>Cadastrar</button>
             <p onClick={() => alterarDivCentral()}>Já tenho uma conta</p>
           </CardCadastrar>
           <CardDicas>
             <h3>Dicas:</h3>
-            <p> - Não utilize espaço no usuário de registro</p>
-            <p> - Evite utilizar uma senha pessoal</p>
+            <p> - Não utilize caracteres especias no usuário de registro</p>
+            <p> - Não utilize dados pessoais no cadastro</p>
           </CardDicas>
         </ContainerCadastrar>
       )
