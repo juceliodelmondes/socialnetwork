@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 import {Container, CardLeft, CenterDiv, CardRight, ProfileInfo,
 LeftOptions, PostStyle, Divider, ButtonsPostDiv, FullDivider, CommentaryDiv, CommentDiv,
@@ -12,30 +12,28 @@ function App() {
   const [logado, setLogado] = useState(false);
   const [cardInicio, setCardInicio] = useState("validacao");
 
-  useEffect(() => {
-    if(cardInicio === "validacao") {
-      let token = localStorage.getItem('@social-network/session/token');
-      let user = localStorage.getItem("@social-network/session/user");
-      if(token !== "" && user !== "") {
-        const obj = {
-          "tokenSession" : token,
-          "user" : user
-        }
-        Axios.post("http://localhost:8080/session/validate", obj).then(objResult => {
-          console.log(objResult);
-          setCardInicio("login");
-          if(objResult.data) {
-            setLogado(true);
-          } else {
-            logoff();
-          }
-        });
-      } else {
-        setCardInicio('login');
-        setLogado(true);
+  if(cardInicio === "validacao") {
+    let token = localStorage.getItem('@social-network/session/token');
+    let user = localStorage.getItem("@social-network/session/user");
+    if(token !== "" && user !== "") {
+      const obj = {
+        "tokenSession" : token,
+        "user" : user
       }
+      Axios.post("http://localhost:8080/session/validate", obj).then(objResult => {
+        console.log(objResult);
+        setCardInicio("login");
+        if(objResult.data) {
+          setLogado(true);
+        } else {
+          logoff();
+        }
+      });
+    } else {
+      setCardInicio('login');
+      setLogado(true);
     }
-  }, [cardInicio])
+  }
   
   const login = () => {
     let user = document.getElementById("usuarioLogin").value;
@@ -99,7 +97,7 @@ function App() {
     if(cardInicio === "login") {
       return (
         <CardCentral>
-          <h1 className="tituloInicio">Inicio de sessão</h1>
+          <h2 className="tituloInicio">Inicio de sessão</h2>
           <input className="usuario" id="usuarioLogin" type="text" placeholder="Usuário:"/>
           <input className="senha" id="senhaLogin" type="password" placeholder="Senha:"/>
           <button className="botaoLogin" onClick={() => {

@@ -413,13 +413,14 @@ export const ContainerLogin = styled.div`
 
 export const CardCentral = styled.div`
     background-color:white;
-    width:360px;
-    height:400px;
+    box-shadow:#0000007a 3px 3px 10px;
+    width:300px;
+    height:300px;
     display:flex;
     flex-direction:column;
-    border-radius:10px;
+    border-radius:5px;
     z-index:1;
-    h1 {
+    .tituloInicio {
         text-align:center;
     }
 
@@ -429,30 +430,30 @@ export const CardCentral = styled.div`
         border-style:none;
         border-bottom-style:solid;
         margin-top:30px;
-        margin-bottom:30px;
-        width:80%;
-        font-size:large;
+        margin-bottom:0px;
+        width:70%;
+        font-size:medium;
         transition: border-bottom-color .5s linear;
         border-bottom-color:gray;
         color:gray;
         &:focus {
             transition: border-bottom-color .5s linear;
-            border-bottom-color:#00acc1;
+            border-bottom-color:#012935;
         }
     }
 
-    button {
+    .botaoLogin {
         align-self:center;
-        width:50%;
+        width:45%;
         margin-top:40px;
-        background-color:#00acc1;
+        background-color:#012935;
         border-style:none;
         border-radius:3px;
         color:white;
-        height:35px;
+        height:30px;
         outline:0;
         cursor:pointer;
-        font-size:medium;
+        font-size:small;
         font-weight:600;
     }
 
